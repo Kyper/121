@@ -8,14 +8,16 @@ Car::Car()
 {
 }
 //------------------Type----------------------
-Car::Car(string Type)
+Car::Car(string Type, int Way, int Price)
 {
     setTypeCar(Type);
+    setPriceCar(Price);
+	setWayCar(Way);
 }
 void Car::setTypeCar(string Type)
 {
     TypeCar=Type;
-  cout<<"Your name of type need to be 15 symbols maximum."<<endl;
+	cout<<"Your name of type need to be 15 symbols maximum."<<endl;
 	if(Type.length()<=15)
 	{
 		TypeCar=Type;
@@ -35,12 +37,6 @@ void Car::displayMessage()
 	cout<<"Way: "<<getWayCar()<<endl;
 	cout<<"Price: "<<getPriceCar()<<endl;
 }
-//------------------Price---Way-------------------
-Car::Car(int Way, int Price)
-{
-	setWayCar(Way);
-    setPriceCar(Price);
-}
 void Car::setWayCar(int Way)
 {
 	WayCar=Way;
@@ -58,4 +54,22 @@ int Car::getWayCar()
 int Car::getPriceCar()
 {
 	return PriceCar;
+}
+//----------------Formule---------------------
+Car::Car(int Formule)
+{
+	setFormuleCar(Formule);
+}
+void Car::setFormuleCar(int Formule)
+{
+	Formule=getPriceCar()/getWayCar();
+	FormuleCar=Formule;
+}
+int Car::getFormuleCar()
+{
+	return FormuleCar;
+}
+void Car::display()
+{
+	cout<<"Attitude Price to Way: "<<getFormuleCar()<<endl;
 }
