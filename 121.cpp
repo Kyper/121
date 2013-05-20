@@ -29,11 +29,16 @@ int main()
    cout << "\nPlease enter the car way:" << endl;
    cin>>WayCar; 
    myCar.setWayCar( WayCar );
-   
+  
    myCar.displayMessage();
-
+   
    //---------------------------------------------------
    cout<<"Length of Type: "<<TypeCar.length()<<" symbols"<<endl;
+   //---------------------------------------------------
+   Car Type1("Lion", 15000, 500);
+   Type1.displayMessage();
+   //---------------------------------------------------
+   myCar.display();
    cout << endl;
    getch();
 } 
